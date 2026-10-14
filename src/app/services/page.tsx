@@ -24,13 +24,13 @@ export default function ServicesPage() {
           ))}
         </ol>
         <div className="lg:sticky lg:top-24 lg:self-start">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
             <Image
-              src="/images/project1.jpeg"
-              alt="A white three-storey house with a timber screen"
+              src="/images/service-property.jpg"
+              alt="A modern villa with a pool and palm trees"
               fill
               sizes="(min-width: 1024px) 30vw, 100vw"
-              className="object-cover"
+              className="object-cover object-[18%_center]"
             />
           </div>
           <p className="mt-4 text-sm leading-6 text-muted">
