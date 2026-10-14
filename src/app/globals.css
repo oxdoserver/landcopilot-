@@ -1,26 +1,115 @@
 @import "tailwindcss";
+/* Land CoPilot theme */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f3ec;
+  --foreground: #1a2420;
+  --surface: #fffcf8;
+  --deep: #12211b;
+  --mint: #1d6f5c;
+  --mint-dark: #145246;
+  --mint-soft: #e7f2ee;
+  --gold: #9a7b3c;
+  --muted: #5e6a64;
+  --line: #e6dfd4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface: var(--surface);
+  --color-deep: var(--deep);
+  --color-mint: var(--mint);
+  --color-mint-dark: var(--mint-dark);
+  --color-mint-soft: var(--mint-soft);
+  --color-gold: var(--gold);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-dm);
+  --font-serif: var(--font-fraunces);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #1c160c;
+}
+
+.btn-gold:hover {
+  background: #b08d49;
+}
+
+.btn-deep {
+  background: var(--deep);
+  color: var(--surface);
+}
+
+.btn-deep:hover {
+  background: #1d3329;
+}
+
+.btn-line {
+  border: 1px solid rgba(255, 252, 248, 0.35);
+}
+
+.btn-line:hover {
+  background: rgba(255, 252, 248, 0.08);
+}
+
+.btn-line-dark {
+  border: 1px solid var(--line);
+  color: var(--deep);
+}
+
+.btn-line-dark:hover {
+  border-color: var(--deep);
+}
+
+.field {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  padding: 0.8rem 0.9rem;
+  color: var(--deep);
+  font-weight: 400;
+  outline: none;
+}
+
+.field:focus {
+  border-color: var(--mint);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
