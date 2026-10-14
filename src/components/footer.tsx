@@ -35,6 +35,11 @@ export function Footer() {
               </a>
             </li>
             <li>
+              <a href={company.whatsappHref} className="hover:text-white" target="_blank" rel="noreferrer">
+                WhatsApp · {company.phone}
+              </a>
+            </li>
+            <li>
               <a href={company.instagramHref} className="hover:text-white" target="_blank" rel="noreferrer">
                 Instagram · {company.instagram}
               </a>

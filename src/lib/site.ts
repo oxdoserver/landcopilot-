@@ -5,6 +5,7 @@ export const company = {
   motto: "Elevating living. Defining luxury.",
   phone: "+91 85900 11033",
   phoneHref: "tel:+918590011033",
+  whatsappHref: "https://wa.me/918590011033",
   email: "landcopilot@gmail.com",
   emailHref: "mailto:landcopilot@gmail.com",
   instagram: "land_co_pilot",

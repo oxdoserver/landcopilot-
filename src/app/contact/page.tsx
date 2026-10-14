@@ -26,6 +26,17 @@ export default function ContactPage() {
             </a>
           </div>
           <div>
+            <h2 className="font-serif text-2xl text-deep">WhatsApp</h2>
+            <a
+              href={company.whatsappHref}
+              className="mt-2 block text-lg text-mint hover:text-mint-dark"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {company.phone}
+            </a>
+          </div>
+          <div>
             <h2 className="font-serif text-2xl text-deep">Email</h2>
             <a href={company.emailHref} className="mt-2 block text-lg text-mint hover:text-mint-dark">
               {company.email}
