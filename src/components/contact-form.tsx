@@ -33,7 +33,7 @@ export function ContactForm() {
     const href = `${company.whatsappHref}?text=${encodeURIComponent(`Enquiry: \n\n${body}`)}`;
     setSent(true);
     window.open(href, "_blank", "noopener,noreferrer");
-
+    event.currentTarget.reset();
   }
 
   return (
