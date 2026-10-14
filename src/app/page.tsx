@@ -75,20 +75,25 @@ export default function HomePage() {
 
       <section className="bg-surface py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Services</p>
-          <h2 className="mt-3 max-w-xl font-serif text-4xl text-deep">What we handle</h2>
-          <p className="mt-4 max-w-2xl leading-7 text-muted">{company.servicesIntro}</p>
-          <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Services</p>
+              <h2 className="mt-3 max-w-xl font-serif text-4xl text-deep">What we handle</h2>
+              <p className="mt-4 max-w-2xl leading-7 text-muted">{company.servicesIntro}</p>
+            </div>
+            <Link href="/services" className="text-sm font-medium text-mint hover:text-mint-dark">
+              See all services
+            </Link>
+          </div>
+          <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-line sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <li key={service.title} className="rounded-2xl border border-line bg-background p-6">
+              <li key={service.title} className="bg-background px-7 py-8">
                 <h3 className="font-serif text-2xl text-deep">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{service.text}</p>
+                <span className="mt-4 block h-px w-10 bg-gold" aria-hidden="true" />
+                <p className="mt-4 text-sm leading-7 text-muted">{service.text}</p>
               </li>
             ))}
           </ul>
-          <Link href="/services" className="mt-8 inline-flex text-sm font-medium text-mint hover:text-mint-dark">
-            See all services
-          </Link>
         </div>
       </section>
 

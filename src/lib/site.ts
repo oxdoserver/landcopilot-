@@ -52,6 +52,10 @@ export const services = [
     title: "Property development consulting",
     text: "Practical advice for landowners and developers taking a site from an idea toward a workable project.",
   },
+  {
+    title: "Buyer and seller advisory",
+    text: "Advice for people buying or selling property, with local knowledge and support on the paperwork.",
+  },
 ] as const;
 
 export const reasons = [
