@@ -6,38 +6,35 @@ import { company, projects, reasons, services, steps } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="bg-deep text-surface">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:py-24">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.22em] text-mint uppercase">{company.eyebrow}</p>
-            <h1 className="mt-4 font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
-              {company.tagline}
-            </h1>
-            <p className="mt-5 max-w-md text-lg leading-8 text-surface/75">
-              Consulting for buyers, sellers, and developers in Malappuram. Clear paperwork, local knowledge, and
-              support from the first conversation to the close.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className="rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark">
-                Get in touch
-              </Link>
-              <Link
-                href="/projects"
-                className="rounded-full border border-white/25 px-5 py-3 text-sm font-medium text-surface hover:bg-white/10"
-              >
-                View projects
-              </Link>
-            </div>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <Image
-              src="/images/project1.jpeg"
-              alt="A white three-storey house with a timber screen and a carport"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
+      <section className="relative isolate overflow-hidden bg-deep text-surface">
+        <Image
+          src="/images/project1.jpeg"
+          alt="A white three-storey house with a timber screen and a carport"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-35"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-deep/45" />
+        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+          <p className="text-xs font-semibold tracking-[0.22em] text-mint uppercase">{company.eyebrow}</p>
+          <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
+            {company.tagline}
+          </h1>
+          <p className="mt-5 max-w-md text-lg leading-8 text-surface/80">
+            Consulting for buyers, sellers, and developers in Malappuram. Clear paperwork, local knowledge, and
+            support from the first conversation to the close.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contact" className="rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark">
+              Get in touch
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-full border border-white/25 px-5 py-3 text-sm font-medium text-surface hover:bg-white/10"
+            >
+              View projects
+            </Link>
           </div>
         </div>
       </section>
