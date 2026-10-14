@@ -8,14 +8,14 @@ export default function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-deep text-surface">
         <Image
-          src="/images/project1.jpeg"
-          alt="A white three-storey house with a timber screen and a carport"
+          src="/images/project2.jpeg"
+          alt="A villa in the evening, with the porch lights on"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-35"
+          className="object-cover object-[center_70%] opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-deep/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep/75 via-deep/40 to-deep/15" />
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
           <p className="text-xs font-semibold tracking-[0.22em] text-mint uppercase">{company.eyebrow}</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
