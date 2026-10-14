@@ -16,7 +16,7 @@ function interestFromQuery(value: string | null) {
 
 export function ContactForm() {
   const params = useSearchParams();
-  const [interest, setInterest] = useState(() => interestFromQuery(params.get("interest")));
+  // const [interest, setInterest] = useState(() => interestFromQuery(params.get("interest")));
   const [sent, setSent] = useState(false);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -25,14 +25,15 @@ export function ContactForm() {
     const name = String(data.get("name") ?? "");
     const phone = String(data.get("phone") ?? "");
     const email = String(data.get("email") ?? "");
-    const topic = interests.find((item) => item.value === interest)?.label ?? "General enquiry";
+    // const topic = interests.find((item) => item.value === interest)?.label ?? "General enquiry";
     const message = String(data.get("message") ?? "");
-    const body = [`Name: ${name}`, `Phone: ${phone}`, `Email: ${email}`, `Interest: ${topic}`, "", message].join(
+    const body = [`Name: ${name}`, `Phone: ${phone}`, `Email: ${email}`, "", message].join(
       "\n",
     );
-    const href = `${company.whatsappHref}?text=${encodeURIComponent(`Enquiry: ${topic}\n\n${body}`)}`;
+    const href = `${company.whatsappHref}?text=${encodeURIComponent(`Enquiry: \n\n${body}`)}`;
     setSent(true);
     window.open(href, "_blank", "noopener,noreferrer");
+
   }
 
   return (
@@ -80,11 +81,11 @@ export function ContactForm() {
       >
         Send enquiry
       </button>
-      {sent ? (
+      {/* {sent ? (
         <p className="mt-4 text-sm text-deep" role="status">
           WhatsApp should open with this enquiry. If it does not, message {company.phone} or call the office.
         </p>
-      ) : null}
+      ) : null} */}
     </form>
   );
 }
