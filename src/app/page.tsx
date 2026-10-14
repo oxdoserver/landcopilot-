@@ -6,7 +6,7 @@ import { company, projects, reasons, services, steps } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-deep text-surface">
+      <section className="relative isolate flex min-h-[36rem] items-center overflow-hidden bg-deep text-surface sm:min-h-[42rem] lg:min-h-[48rem]">
         <Image
           src="/images/project2.jpeg"
           alt="A villa in the evening, with the porch lights on"
@@ -16,7 +16,7 @@ export default function HomePage() {
           className="object-cover object-[center_70%] opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-deep/75 via-deep/40 to-deep/15" />
-        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 lg:py-28">
+        <div className="relative mx-auto w-full max-w-6xl px-6 py-24 sm:py-28 lg:py-32">
           <p className="text-xs font-semibold tracking-[0.22em] text-mint uppercase">{company.eyebrow}</p>
           <h1 className="mt-4 max-w-3xl font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
             {company.tagline}
