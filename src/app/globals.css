@@ -2,16 +2,16 @@
 /* Land CoPilot theme */
 
 :root {
-  --background: #f6f3ec;
-  --foreground: #1a2420;
-  --surface: #fffcf8;
-  --deep: #12211b;
-  --mint: #1d6f5c;
-  --mint-dark: #145246;
-  --mint-soft: #e7f2ee;
-  --gold: #9a7b3c;
-  --muted: #5e6a64;
-  --line: #e6dfd4;
+  --background: #f3f0e8;
+  --foreground: #14241c;
+  --surface: #fffcf7;
+  --deep: #102019;
+  --mint: #1c8a72;
+  --mint-dark: #14695a;
+  --mint-soft: #e5f3ee;
+  --gold: #b08a3e;
+  --muted: #5c6b64;
+  --line: #e4ddd2;
 }
 
 @theme inline {
@@ -35,64 +35,12 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
-.eyebrow {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.75rem;
-  padding: 0.7rem 1.15rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: #1c160c;
-}
-
-.btn-gold:hover {
-  background: #b08d49;
-}
-
-.btn-deep {
-  background: var(--deep);
-  color: var(--surface);
-}
-
-.btn-deep:hover {
-  background: #1d3329;
-}
-
-.btn-line {
-  border: 1px solid rgba(255, 252, 248, 0.35);
-}
-
-.btn-line:hover {
-  background: rgba(255, 252, 248, 0.08);
-}
-
-.btn-line-dark {
-  border: 1px solid var(--line);
-  color: var(--deep);
-}
-
-.btn-line-dark:hover {
-  border-color: var(--deep);
-}
-
 .field {
   width: 100%;
+  border-radius: 0.75rem;
   border: 1px solid var(--line);
   background: white;
-  padding: 0.8rem 0.9rem;
+  padding: 0.75rem 1rem;
   color: var(--deep);
   font-weight: 400;
   outline: none;

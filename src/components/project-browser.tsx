@@ -12,7 +12,7 @@ export function ProjectBrowser({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-x-6 gap-y-2 border-b border-line" role="group" aria-label="Filter projects">
+      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects">
         {categories.map((item) => {
           const selected = item === category;
           return (
@@ -21,8 +21,8 @@ export function ProjectBrowser({ projects }: { projects: Project[] }) {
               type="button"
               onClick={() => setCategory(item)}
               aria-pressed={selected}
-              className={`border-b px-1 py-2 text-sm ${
-                selected ? "border-gold text-deep" : "border-transparent text-muted hover:text-deep"
+              className={`rounded-full px-4 py-2 text-sm font-medium ${
+                selected ? "bg-deep text-surface" : "bg-surface text-deep ring-1 ring-line hover:bg-mint-soft"
               }`}
             >
               {item}

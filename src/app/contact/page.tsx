@@ -56,7 +56,7 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
-        <Suspense fallback={<div className="h-96 border border-line bg-surface" />}>
+        <Suspense fallback={<div className="h-96 rounded-2xl border border-line bg-surface" />}>
           <ContactForm />
         </Suspense>
       </section>

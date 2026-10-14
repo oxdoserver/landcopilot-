@@ -13,7 +13,7 @@ export function Logo({ tone = "dark" }: LogoProps) {
         width={1280}
         height={371}
         priority={tone === "dark"}
-        className="h-10 w-auto"
+        className="h-9 w-auto"
       />
     </span>
   );

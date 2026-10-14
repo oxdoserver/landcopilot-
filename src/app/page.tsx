@@ -1,35 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
-import { btn, eyebrow } from "@/components/styles";
 import { company, projects, reasons, services, steps } from "@/lib/site";
 
 export default function HomePage() {
-  const [featured, ...rest] = projects;
-
   return (
     <>
       <section className="bg-deep text-surface">
-        <div className="mx-auto grid max-w-6xl lg:grid-cols-2">
-          <div className="flex flex-col justify-center px-6 py-16 lg:py-24 lg:pr-16">
-            <p className={eyebrow}>{company.eyebrow}</p>
-            <h1 className="mt-5 max-w-xl font-serif text-4xl leading-[1.1] text-balance sm:text-5xl lg:text-6xl">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:py-24">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.22em] text-mint uppercase">{company.eyebrow}</p>
+            <h1 className="mt-4 font-serif text-4xl leading-tight text-balance sm:text-5xl lg:text-6xl">
               {company.tagline}
             </h1>
-            <p className="mt-6 max-w-md text-lg leading-8 text-surface/75">
+            <p className="mt-5 max-w-md text-lg leading-8 text-surface/75">
               Consulting for buyers, sellers, and developers in Malappuram. Clear paperwork, local knowledge, and
               support from the first conversation to the close.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contact" className={btn.gold}>
+              <Link href="/contact" className="rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark">
                 Get in touch
               </Link>
-              <Link href="/projects" className={btn.line}>
+              <Link
+                href="/projects"
+                className="rounded-full border border-white/25 px-5 py-3 text-sm font-medium text-surface hover:bg-white/10"
+              >
                 View projects
               </Link>
             </div>
           </div>
-          <div className="relative min-h-[420px] lg:min-h-[680px]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
             <Image
               src="/images/project1.jpeg"
               alt="A white three-storey house with a timber screen and a carport"
@@ -43,11 +43,11 @@ export default function HomePage() {
       </section>
 
       <section className="border-b border-line bg-surface">
-        <ul className="mx-auto grid max-w-6xl sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mx-auto grid max-w-6xl gap-6 px-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {["Legal and financial support", "Local expertise", "Verified information", "Clear communication"].map(
             (item) => (
-              <li key={item} className="border-line px-6 py-6 text-sm text-deep lg:border-l lg:first:border-l-0">
-                <span className="mb-3 block h-px w-8 bg-gold" aria-hidden="true" />
+              <li key={item} className="text-sm font-medium text-deep">
+                <span className="mr-2 inline-block h-2 w-2 rounded-full bg-gold" aria-hidden="true" />
                 {item}
               </li>
             ),
@@ -55,8 +55,8 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-28">
-        <div className="relative aspect-[4/3] overflow-hidden">
+      <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-2">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
           <Image
             src="/images/project3.jpeg"
             alt="A white two-storey villa with a wooden front door"
@@ -66,65 +66,47 @@ export default function HomePage() {
           />
         </div>
         <div>
-          <p className={eyebrow}>Who we are</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight text-deep">A local partner for clear property deals</h2>
-          <p className="mt-5 leading-7 text-muted">{company.about}</p>
+          <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Who we are</p>
+          <h2 className="mt-3 font-serif text-4xl text-deep">A local partner for clear property deals</h2>
+          <p className="mt-4 leading-7 text-muted">{company.about}</p>
           <p className="mt-4 leading-7 text-muted">{company.motto}</p>
-          <Link href="/about" className="mt-6 inline-flex text-sm text-deep underline decoration-gold underline-offset-4">
+          <Link href="/about" className="mt-6 inline-flex text-sm font-medium text-mint hover:text-mint-dark">
             About Land CoPilot
           </Link>
         </div>
       </section>
 
-      <section className="border-y border-line bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <p className={eyebrow}>Services</p>
-          <h2 className="mt-4 max-w-xl font-serif text-4xl text-deep">What we handle</h2>
+      <section className="bg-surface py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Services</p>
+          <h2 className="mt-3 max-w-xl font-serif text-4xl text-deep">What we handle</h2>
           <p className="mt-4 max-w-2xl leading-7 text-muted">{company.servicesIntro}</p>
-          <ul className="mt-10 border-t border-line">
-            {services.map((service, index) => (
-              <li key={service.title} className="grid gap-2 border-b border-line py-6 sm:grid-cols-[4.5rem_1fr_1.4fr] sm:items-baseline sm:gap-6">
-                <span className="text-sm text-gold">0{index + 1}</span>
+          <ul className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <li key={service.title} className="rounded-2xl border border-line bg-background p-6">
                 <h3 className="font-serif text-2xl text-deep">{service.title}</h3>
-                <p className="text-sm leading-6 text-muted">{service.text}</p>
+                <p className="mt-3 text-sm leading-6 text-muted">{service.text}</p>
               </li>
             ))}
           </ul>
+          <Link href="/services" className="mt-8 inline-flex text-sm font-medium text-mint hover:text-mint-dark">
+            See all services
+          </Link>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className={eyebrow}>Projects</p>
-            <h2 className="mt-4 font-serif text-4xl text-deep">Work we take on</h2>
+            <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Projects</p>
+            <h2 className="mt-3 font-serif text-4xl text-deep">Work we take on</h2>
           </div>
-          <Link href="/projects" className="text-sm text-deep underline decoration-gold underline-offset-4">
+          <Link href="/projects" className="text-sm font-medium text-mint hover:text-mint-dark">
             Browse projects
           </Link>
         </div>
-        {featured ? (
-          <Link href={`/projects/${featured.slug}`} className="group mt-10 grid items-stretch lg:grid-cols-[1.4fr_0.8fr]">
-            <div className="relative min-h-[320px] overflow-hidden">
-              <Image
-                src={featured.image}
-                alt={featured.imageAlt}
-                fill
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-cover transition duration-700 group-hover:scale-[1.02]"
-              />
-            </div>
-            <div className="flex flex-col justify-center border border-line bg-surface px-6 py-8 lg:border-l-0 lg:px-10">
-              <p className={eyebrow}>{featured.category}</p>
-              <h3 className="mt-3 font-serif text-3xl text-deep">{featured.title}</h3>
-              <p className="mt-2 text-sm text-muted">{featured.area}</p>
-              <p className="mt-4 leading-7 text-deep/80">{featured.summary}</p>
-              <p className="mt-6 text-sm text-deep">View details</p>
-            </div>
-          </Link>
-        ) : null}
-        <ul className="mt-8 grid gap-8 md:grid-cols-2">
-          {rest.map((project) => (
+        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+          {projects.slice(0, 3).map((project) => (
             <li key={project.slug}>
               <ProjectCard project={project} />
             </li>
@@ -132,58 +114,43 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="relative min-h-[340px]">
-        <Image
-          src="/images/project2.jpeg"
-          alt="A villa in the evening with the porch lights on"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-deep/55" />
-        <div className="relative mx-auto flex min-h-[340px] max-w-6xl items-end px-6 py-12">
-          <p className="max-w-lg font-serif text-4xl leading-tight text-surface sm:text-5xl">{company.motto}</p>
-        </div>
-      </section>
-
-      <section className="bg-surface">
-        <div className="mx-auto grid max-w-6xl gap-14 px-6 py-20 lg:grid-cols-2">
+      <section className="bg-deep py-20 text-surface">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
           <div>
-            <p className={eyebrow}>How it works</p>
-            <h2 className="mt-4 font-serif text-4xl text-deep">A clear path from the first call to the close</h2>
-            <ol className="mt-8 space-y-6">
+            <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Why choose us</p>
+            <h2 className="mt-3 font-serif text-4xl">Ethics, local knowledge, and a clear deal</h2>
+            <ol className="mt-8 space-y-5">
               {steps.map((step, index) => (
-                <li key={step.title} className="grid grid-cols-[2.5rem_1fr] gap-3 border-t border-line pt-6">
-                  <span className="font-serif text-2xl text-gold">0{index + 1}</span>
+                <li key={step.title} className="flex gap-4">
+                  <span className="font-serif text-2xl text-gold">{index + 1}</span>
                   <div>
-                    <p className="font-medium text-deep">{step.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-muted">{step.text}</p>
+                    <p className="font-medium">{step.title}</p>
+                    <p className="mt-1 text-sm leading-6 text-surface/70">{step.text}</p>
                   </div>
                 </li>
               ))}
             </ol>
           </div>
-          <div>
-            <p className={eyebrow}>Why choose us</p>
-            <ul className="mt-8 space-y-4">
-              {reasons.map((reason) => (
-                <li key={reason} className="border-b border-line pb-4 text-sm leading-6 text-deep/85">
-                  {reason}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="grid content-start gap-3 sm:grid-cols-2">
+            {reasons.map((reason) => (
+              <li key={reason} className="rounded-2xl bg-white/5 p-4 text-sm leading-6 text-surface/85">
+                {reason}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="border border-line bg-surface px-6 py-12 sm:px-12">
-          <p className={eyebrow}>Contact</p>
-          <h2 className="mt-4 font-serif text-4xl text-deep">Ready to talk about a property?</h2>
-          <p className="mt-4 max-w-xl leading-7 text-muted">
+        <div className="rounded-3xl bg-mint-soft px-6 py-12 sm:px-12">
+          <h2 className="font-serif text-4xl text-deep">Ready to talk about a property?</h2>
+          <p className="mt-3 max-w-xl leading-7 text-muted">
             Call {company.phone}, write to {company.email}, or visit the office in Angadippuram.
           </p>
-          <Link href="/contact" className={`${btn.deep} mt-8`}>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex rounded-full bg-deep px-5 py-3 text-sm font-medium text-surface hover:bg-deep/90"
+          >
             Contact the office
           </Link>
         </div>

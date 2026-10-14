@@ -2,14 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { btn, eyebrow } from "@/components/styles";
 import { getProject, projects } from "@/lib/site";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
-
-export const instant = false;
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -29,7 +26,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <article className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-2">
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
         <Image
           src={project.image}
           alt={project.imageAlt}
@@ -40,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         />
       </div>
       <div>
-        <p className={eyebrow}>{project.category}</p>
+        <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">{project.category}</p>
         <h1 className="mt-3 font-serif text-4xl text-deep sm:text-5xl">{project.title}</h1>
         <p className="mt-2 text-sm text-muted">{project.area}</p>
         <div className="mt-6 space-y-4 leading-7 text-muted">
@@ -59,11 +56,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href={`/contact?interest=${project.slug}`}
-            className={btn.deep}
+            className="rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark"
           >
             Enquire about this
           </Link>
-          <Link href="/projects" className={btn.lineDark}>
+          <Link href="/projects" className="rounded-full border border-line px-5 py-3 text-sm font-medium text-deep hover:bg-surface">
             All projects
           </Link>
         </div>
@@ -73,7 +70,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <h2 className="font-serif text-3xl text-deep">Plans and views</h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {project.gallery.map((item) => (
-              <li key={item.src} className="relative aspect-square overflow-hidden border border-line bg-white">
+              <li key={item.src} className="relative aspect-square overflow-hidden rounded-2xl border border-line bg-white">
                 <Image
                   src={item.src}
                   alt={item.alt}

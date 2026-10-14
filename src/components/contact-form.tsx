@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { btn } from "@/components/styles";
 import { company, projects } from "@/lib/site";
 
 const interests = [
@@ -37,7 +36,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="border border-line bg-surface p-6 sm:p-8">
+    <form onSubmit={onSubmit} className="rounded-2xl border border-line bg-surface p-6 shadow-sm sm:p-8">
       <h2 className="font-serif text-3xl text-deep">Send an enquiry</h2>
       <p className="mt-2 text-sm leading-6 text-muted">
         This opens your email app with the message ready to send to {company.email}. You can also call{" "}
@@ -78,7 +77,7 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className={`${btn.deep} mt-6`}
+        className="mt-6 rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark"
       >
         Send enquiry
       </button>

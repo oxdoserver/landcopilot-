@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { eyebrow } from "@/components/styles";
 import { company, nav } from "@/lib/site";
 
 export function Footer() {
@@ -13,7 +12,7 @@ export function Footer() {
           <p className="mt-2 text-sm text-surface/60">{company.eyebrow}</p>
         </div>
         <div>
-          <p className={eyebrow}>Visit</p>
+          <p className="text-sm font-medium text-mint">Visit</p>
           <address className="mt-3 text-sm leading-6 text-surface/80 not-italic">
             {company.address.map((line) => (
               <span key={line} className="block">
@@ -23,7 +22,7 @@ export function Footer() {
           </address>
         </div>
         <div>
-          <p className={eyebrow}>Talk to us</p>
+          <p className="text-sm font-medium text-mint">Talk to us</p>
           <ul className="mt-3 space-y-2 text-sm text-surface/80">
             <li>
               <a href={company.phoneHref} className="hover:text-white">

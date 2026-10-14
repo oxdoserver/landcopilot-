@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Logo } from "@/components/logo";
-import { btn } from "@/components/styles";
 import { nav } from "@/lib/site";
 
 function isCurrent(pathname: string, href: string) {
@@ -18,19 +17,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" aria-label="Land CoPilot home" onClick={() => setOpen(false)}>
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`border-b pb-1 text-[13px] tracking-wide ${
-                isCurrent(pathname, item.href)
-                  ? "border-gold text-deep"
-                  : "border-transparent text-deep/70 hover:text-deep"
+              className={`text-sm font-medium ${
+                isCurrent(pathname, item.href) ? "text-mint" : "text-deep/75 hover:text-deep"
               }`}
               aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
             >
@@ -38,12 +35,15 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link href="/contact" className={`${btn.deep} hidden md:inline-flex`}>
+        <Link
+          href="/contact"
+          className="hidden rounded-full bg-mint px-4 py-2 text-sm font-medium text-white hover:bg-mint-dark md:inline-flex"
+        >
           Get in touch
         </Link>
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center border border-line text-deep md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-deep md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -63,7 +63,9 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`block py-1 text-base ${isCurrent(pathname, item.href) ? "text-gold" : "text-deep"}`}
+                  className={`block py-1 text-base font-medium ${
+                    isCurrent(pathname, item.href) ? "text-mint" : "text-deep"
+                  }`}
                   aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
                   onClick={() => setOpen(false)}
                 >
