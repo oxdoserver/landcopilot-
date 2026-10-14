@@ -54,13 +54,13 @@ export default function HomePage() {
 
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-2">
         <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-          <Image
-            src="/images/project3.jpeg"
-            alt="A white two-storey villa with a wooden front door"
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
+            <Image
+              src="/images/project3.jpeg"
+              alt="A white two-storey villa with a wooden front door"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[center_75%]"
+            />
         </div>
         <div>
           <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Who we are</p>
@@ -144,17 +144,46 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="rounded-3xl bg-mint-soft px-6 py-12 sm:px-12">
-          <h2 className="font-serif text-4xl text-deep">Ready to talk about a property?</h2>
-          <p className="mt-3 max-w-xl leading-7 text-muted">
-            Call {company.phone}, write to {company.email}, or visit the office in Angadippuram.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex rounded-full bg-deep px-5 py-3 text-sm font-medium text-surface hover:bg-deep/90"
-          >
-            Contact the office
-          </Link>
+        <div className="grid overflow-hidden rounded-3xl bg-deep text-surface lg:grid-cols-2">
+          <div className="flex flex-col justify-center px-6 py-12 sm:px-12">
+            <p className="text-xs font-semibold tracking-[0.18em] text-mint uppercase">Contact</p>
+            <h2 className="mt-3 font-serif text-4xl">Ready to talk about a property?</h2>
+            <p className="mt-4 max-w-md leading-7 text-surface/75">
+              Call, write, or visit the office in Angadippuram. We will tell you what is open and handle the paperwork
+              with you.
+            </p>
+            <div className="mt-6 space-y-2 text-sm">
+              <a href={company.phoneHref} className="block font-medium text-surface hover:text-mint">
+                {company.phone}
+              </a>
+              <a href={company.emailHref} className="block text-surface/80 hover:text-mint">
+                {company.email}
+              </a>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={company.phoneHref}
+                className="rounded-full bg-mint px-5 py-3 text-sm font-medium text-white hover:bg-mint-dark"
+              >
+                Call the office
+              </a>
+              <Link
+                href="/contact"
+                className="rounded-full border border-white/25 px-5 py-3 text-sm font-medium text-surface hover:bg-white/10"
+              >
+                Send an enquiry
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-64">
+            <Image
+              src="/images/project3.jpeg"
+              alt="A white two-storey villa with a wooden front door"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-[center_80%]"
+            />
+          </div>
         </div>
       </section>
     </>
