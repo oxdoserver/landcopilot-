@@ -39,8 +39,7 @@ export function ContactForm() {
     <form onSubmit={onSubmit} className="rounded-2xl border border-line bg-surface p-6 shadow-sm sm:p-8">
       <h2 className="font-serif text-3xl text-deep">Send an enquiry</h2>
       <p className="mt-2 text-sm leading-6 text-muted">
-        This opens your email app with the message ready to send to {company.email}. You can also call{" "}
-        {company.phone}.
+      Have a question or need more information? Fill out the form below, and our team will get back to you as soon as possible.
       </p>
       <div className="mt-6 grid gap-4">
         <label className="grid gap-1.5 text-sm font-medium text-deep">
@@ -55,7 +54,7 @@ export function ContactForm() {
           Email
           <input name="email" required type="email" autoComplete="email" className="field" />
         </label>
-        <label className="grid gap-1.5 text-sm font-medium text-deep">
+        {/* <label className="grid gap-1.5 text-sm font-medium text-deep">
           Interest
           <select
             name="interest"
@@ -69,10 +68,10 @@ export function ContactForm() {
               </option>
             ))}
           </select>
-        </label>
+        </label> */}
         <label className="grid gap-1.5 text-sm font-medium text-deep">
           Message
-          <textarea name="message" required rows={5} className="field resize-y" />
+          <textarea name="message" required rows={4} className="field resize-y" />
         </label>
       </div>
       <button
@@ -81,12 +80,12 @@ export function ContactForm() {
       >
         Send enquiry
       </button>
-      {sent ? (
+      {/* {sent ? (
         <p className="mt-4 text-sm text-deep" role="status">
           Your email app should open with this enquiry. If it does not, write to {company.email} or call{" "}
           {company.phone}.
         </p>
-      ) : null}
+      ) : null} */}
     </form>
   );
 }
